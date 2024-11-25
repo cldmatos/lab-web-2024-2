@@ -1,26 +1,22 @@
-# Web2024-2
-
 ## Descrição
 
-Este é um projeto básico em Node.js utilizando o framework Hapi.js para gerenciamento de rotas e o Joi para validação de dados, construido na disciplina de Laboratório Web da Fatec Franca.
+Este é um projeto acadêmico desenvolvido pelos alunos **Cláudio Matos** e **Felipe Ferreira**, do curso de Desenvolvimento de Software Multiplataforma (DSM), da Fatec Franca. 
 
-Apresenta estrutura base para desenvolvimento de apis.
+O projeto foi desenvolvido em Node.js, utilizando o framework Hapi.js para gerenciamento de rotas e o Joi para validação de dados. A base do projeto foi construída na disciplina de Laboratório Web.
+
+Apresenta estrutura base para desenvolvimento de APIs.
 
 ## Requisitos
 
-- Node.js (versão recomendada: 14.x ou superior)
+- Node.js (versão recomendada: 14 ou superior)
 - npm (gerenciador de pacotes do Node.js)
 
 ## Instalação
 
-1. Clone o repositório em sua máquina local:
-   ```bash
-   git clone git@github.com:fabiomedeirosf/lab-web-2024-2.git
-   ```
-2. Acesse a pasta do projeto:
-   ```bash
-   cd web2024-2
-   ```
+1. Clone o repositório em sua máquina local
+   
+2. Acesse a pasta do projeto
+   
 3. Instale as dependências do projeto:
    ```bash
    npm install
@@ -42,14 +38,7 @@ Apresenta estrutura base para desenvolvimento de apis.
   ```
   Este comando utiliza o flag `--watch` do Node.js para reiniciar automaticamente o servidor sempre que houver alterações no código.
 
-- **Testes:**
-- [ ] Implementar testes automatizados para endpoints principais
-
 ## Dependências Principais
 
-- **@hapi/hapi**: Framework web para construir servidores e APIs.
-- **joi**: Biblioteca para validação de dados no Node.js.
-
-## Licença
-
-Este projeto está sob a licença ISC.
+- **@hapi/hapi**: framework web para construir servidores e APIs.
+- **joi**: biblioteca para validação de dados no Node.js.
