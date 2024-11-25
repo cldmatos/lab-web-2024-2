@@ -9,4 +9,4 @@ const novoProduto = async (request, h) => {
     return h.response(result).code(201);
 }
 
-module.exports = {buscaProdutos};
+module.exports = {novoProduto};

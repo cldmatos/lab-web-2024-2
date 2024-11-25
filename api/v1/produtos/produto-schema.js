@@ -6,12 +6,12 @@ const criarProdutos = {
             .string()
             .min(2)
             .required(),
-            quantidade: Joi
+        quantidade: Joi
             .number()
             .integer()
             .positive()
             .required(),
-            preco: Joi
+        preco: Joi
             .number()
             .positive()
             .required()
