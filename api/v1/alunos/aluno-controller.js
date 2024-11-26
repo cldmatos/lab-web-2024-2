@@ -22,11 +22,16 @@ const alunoPorId = async (request, h) => {
 }
 
 const createAluno = async (request, h) => {
-    //save in memory
-    
-    const result = await alunoBusiness.save(request.payload);
-
-    return h.response(result).code(201);
+    try {
+        const result = await alunoBusiness.save(request.payload);
+        return h.response(result).code(201);
+    } catch (error) {
+        console.error("Erro ao salvar aluno:", error); // Captura do erro completo
+        return h.response({
+            message: "Erro interno no servidor.",
+            error: error.message
+        }).code(500);
+    }
 }
 
 module.exports = {getAlunos, createAluno, alunoPorId};
