@@ -10,7 +10,6 @@ const save = async (aluno) => {
 
 
 const list = async(filters) => {
-
     
     return await alunoModel.Aluno.findAll();
 }
