@@ -11,6 +11,14 @@ const routes = [
             handler: produtoController.criarProduto,
             validate: produtoSchema.criarProduto
         }   
+    },
+    {
+        method: "GET",
+        path: `${baseVersion}/produtos`,
+        options: {
+            handler: produtoController.consultarProdutos,
+            validate: produtoSchema.consultarProdutos
+        }
     }
 ];
 
