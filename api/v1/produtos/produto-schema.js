@@ -22,17 +22,14 @@ const consultarProdutos = {
     query: Joi.object({
         nome: Joi
               .string()
-              .min(2)
-              .required(),
+              .min(2),
         quantidade: Joi
                     .number()
                     .integer()
-                    .positive()
-                    .required(),
+                    .positive(),
         preco: Joi
                .number()
-               .positive()
-               .required()
+               .positive()               
     })
 }
 
