@@ -5,12 +5,11 @@ const save = async (aluno) => {
     
     const saved = await alunoModel.Aluno.create(aluno);
 
-    return aluno;
+    return saved;
 }
 
 
 const list = async(filters) => {
-
     
     return await alunoModel.Aluno.findAll();
 }

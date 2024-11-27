@@ -1,4 +1,4 @@
-const listaProdutos = [];
+const listaProdutos = [];  // Banco de dados simulado (substituir por BD real)
 
 const produtoBusiness = require("./produto-business");
 

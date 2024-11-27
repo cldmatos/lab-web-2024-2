@@ -5,7 +5,7 @@ const save = async (produto) => {
     
     const saved = await produtoModel.Produto.create(produto);
 
-    return produto
+    return saved;
 }
 
 

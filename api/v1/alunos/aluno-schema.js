@@ -1,6 +1,5 @@
 const Joi = require("joi");
 
-
 const createAluno = {
     payload: Joi.object({
         nome: Joi
