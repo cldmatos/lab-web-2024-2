@@ -1,6 +1,7 @@
 const listaProdutos = []; 
 
 const produtoBusiness = require("./produto-business");
+const produtoModel = require('./produto-model');
 
 const criarProduto = async (request, h) => {
 
@@ -17,22 +18,16 @@ const consultarProdutos = async (request, h) => {
 }
 
 const buscarProdutoPorId = async (request, h) => {
-    try {
-        const produtoId = request.params.id;
-       
-        const produto = listaProdutos.find(p => p.id === produtoId);
-        if (!produto) {
-            return h.response({ message: "Produto não encontrado" }).code(404);
-        }
+    const ProdutoId = request.params.id;
 
-        return h.response(produto).code(200);
-    } catch (error) {
-        console.error("Erro ao buscar produto:", error);
-        return h.response({
-            message: "Erro interno no servidor.",
-            error: error.message
-        }).code(500);
+    // Usando Sequelize para buscar o produto no banco de dados
+    const produtoProcurado = await produtoModel.Produto.findByPk(ProdutoId);
+
+    if (produtoProcurado) {
+        return h.response(produtoProcurado).code(200);
     }
+
+    return h.response().code(404);
 };
 
-module.exports = {criarProduto, consultarProdutos};
+module.exports = {criarProduto, consultarProdutos, buscarProdutoPorId};
