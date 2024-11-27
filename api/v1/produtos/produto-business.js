@@ -1,7 +1,7 @@
 const listaProdutos = [];
-const produtosModel = require('./produto-model');
+const produtoModel = require('./produto-model');
 
-const save = async (aluno) => {
+const save = async (produto) => {
     
     const saved = await produtoModel.Produto.create(produto);
 

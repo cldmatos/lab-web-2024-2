@@ -8,8 +8,8 @@ const routes = [
         method: "POST",
         path: `${baseVersion}/produtos`,
         options: {
-            handler: produtoController.novoProduto,
-            validate: produtoSchema.criarProdutos
+            handler: produtoController.criarProduto,
+            validate: produtoSchema.criarProduto
         }   
     }
 ];

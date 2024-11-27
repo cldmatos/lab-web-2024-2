@@ -1,6 +1,6 @@
 const Joi = require("joi");
 
-const criarProdutos = {
+const criarProduto = {
     payload: Joi.object({
         nome: Joi
             .string()
@@ -18,5 +18,5 @@ const criarProdutos = {
     })
 };
 
-module.exports = {criarProdutos, 
+module.exports = {criarProduto    
                  };
