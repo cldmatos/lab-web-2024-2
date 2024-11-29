@@ -57,9 +57,16 @@ const atualizarProduto = {
     }).min(1)
 };
 
+const deletarProduto = {
+    params: Joi.object({
+        id: Joi.number().integer().positive().required()
+    })
+};
+
 module.exports = { 
     criarProduto,
     consultarProdutos,
     buscarProdutoPorId,
-    atualizarProduto // Exportando o esquema de validação para PUT
+    atualizarProduto,
+    deletarProduto 
 };

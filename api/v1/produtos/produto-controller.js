@@ -1,25 +1,17 @@
-const listaProdutos = []; 
-
 const produtoBusiness = require("./produto-business");
-const produtoModel = require('./produto-model');
 
 const criarProduto = async (request, h) => {
-
     const result = await produtoBusiness.save(request.payload);
-    
     return h.response(result).code(201);
 }
 
 const consultarProdutos = async (request, h) => {
-    
-    const result = await produtoBusiness.list(request.query);  
-
+    const result = await produtoBusiness.list(request.query);
     return result;
 }
 
 const buscarProdutoPorId = async (request, h) => {
     const ProdutoId = request.params.id;
-
     const produtoProcurado = await produtoModel.Produto.findByPk(ProdutoId);
 
     if (produtoProcurado) {
@@ -40,13 +32,24 @@ const atualizarProduto = async (request, h) => {
     }
 
     await produtoProcurado.update(dadosAtualizados);
-
     return h.response(produtoProcurado).code(200);
 };
 
-module.exports = { 
-    criarProduto, 
-    consultarProdutos, 
+const deletarProduto = async (request, h) => {
+    const ProdutoId = request.params.id;
+
+    try {
+        const produtoDeletado = await produtoBusiness.deleteById(ProdutoId);
+        return h.response(produtoDeletado).code(200);
+    } catch (error) {
+        return h.response({ message: error.message }).code(404);
+    }
+};
+
+module.exports = {
+    criarProduto,
+    consultarProdutos,
     buscarProdutoPorId,
-    atualizarProduto
+    atualizarProduto,
+    deletarProduto 
 };
