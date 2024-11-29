@@ -1,6 +1,7 @@
-//const listaProdutos = [];  // Banco de dados simulado (substituir por BD real)
+const listaProdutos = []; 
 
 const produtoBusiness = require("./produto-business");
+const produtoModel = require('./produto-model');
 
 const criarProduto = async (request, h) => {
 
@@ -13,21 +14,20 @@ const consultarProdutos = async (request, h) => {
     
     const result = await produtoBusiness.list(request.query);  
 
-    console.log(result);
-
     return result;
 }
 
-const consultaPorId = async (request, h) => {
+const buscarProdutoPorId = async (request, h) => {
+    const ProdutoId = request.params.id;
 
-    const idProduto = request.params.id;
-    
-    const produtoProcurado = listaProdutos.find(produto => produto.id == idProduto);
-    if(produtoProcurado) {
-        return h.response(ProdutoProcurado).code(200);
-    } 
+    // Usando Sequelize para buscar o produto no banco de dados
+    const produtoProcurado = await produtoModel.Produto.findByPk(ProdutoId);
+
+    if (produtoProcurado) {
+        return h.response(produtoProcurado).code(200);
+    }
 
     return h.response().code(404);
-}
+};
 
-module.exports = {criarProduto, consultarProdutos, consultaPorId};
+module.exports = {criarProduto, consultarProdutos, buscarProdutoPorId};

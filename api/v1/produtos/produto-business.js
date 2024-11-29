@@ -9,8 +9,7 @@ const save = async (produto) => {
 }
 
 
-const list = async(filters) => {
-    
+const list = async(filters) => {    
 
     return await produtoModel.Produto.findAll();
 }
