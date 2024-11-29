@@ -1,4 +1,5 @@
 const produtoBusiness = require("./produto-business");
+const produtoModel = require("./produto-model");
 
 const criarProduto = async (request, h) => {
     const result = await produtoBusiness.save(request.payload);
@@ -14,11 +15,11 @@ const buscarProdutoPorId = async (request, h) => {
     const ProdutoId = request.params.id;
     const produtoProcurado = await produtoModel.Produto.findByPk(ProdutoId);
 
-    if (produtoProcurado) {
-        return h.response(produtoProcurado).code(200);
+    if (!produtoProcurado) {        
+        return h.response({ message: 'Produto não encontrado' }).code(404);
     }
 
-    return h.response().code(404);
+    return h.response(produtoProcurado).code(200);
 }
 
 const atualizarProduto = async (request, h) => {
@@ -27,13 +28,13 @@ const atualizarProduto = async (request, h) => {
 
     const produtoProcurado = await produtoModel.Produto.findByPk(ProdutoId);
 
-    if (!produtoProcurado) {
-        return h.response().code(404);
+    if (!produtoProcurado) {        
+        return h.response({ message: 'Produto não encontrado' }).code(404);
     }
 
     await produtoProcurado.update(dadosAtualizados);
     return h.response(produtoProcurado).code(200);
-};
+}
 
 const deletarProduto = async (request, h) => {
     const ProdutoId = request.params.id;
@@ -51,5 +52,5 @@ module.exports = {
     consultarProdutos,
     buscarProdutoPorId,
     atualizarProduto,
-    deletarProduto 
+    deletarProduto
 };
