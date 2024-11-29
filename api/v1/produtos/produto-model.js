@@ -26,7 +26,7 @@ const Produto = database.sequelize.define('Produto', {
     }
 }, {
     tableName: 'produto',
-    timestamps: false //desabilita o createdAt e updatedAt do sequelize
+    timestamps: false 
 }); 
 
 module.exports = {Produto};
