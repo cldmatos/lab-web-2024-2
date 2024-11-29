@@ -39,7 +39,27 @@ const buscarProdutoPorId = {
     })
 };
 
-module.exports = {criarProduto,
-                  consultarProdutos,
-                  buscarProdutoPorId    
-                 };
+const atualizarProduto = {
+    params: Joi.object({
+        id: Joi.number().integer().positive().required()
+    }),
+    payload: Joi.object({
+        nome: Joi
+            .string()
+            .min(2),
+        quantidade: Joi
+            .number()
+            .integer()
+            .positive(),
+        preco: Joi
+            .number()
+            .positive()
+    }).min(1)
+};
+
+module.exports = { 
+    criarProduto,
+    consultarProdutos,
+    buscarProdutoPorId,
+    atualizarProduto // Exportando o esquema de validação para PUT
+};

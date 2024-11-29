@@ -27,6 +27,14 @@
                 handler: produtoController.buscarProdutoPorId,
                 validate: produtoSchema.buscarProdutoPorId
             }
+        },
+        {
+            method: "PUT",
+            path: `${baseVersion}/produtos/{id}`,
+            options: {
+                handler: produtoController.atualizarProduto,
+                validate: produtoSchema.buscarProdutoPorId
+            }
         }
     ];
 
