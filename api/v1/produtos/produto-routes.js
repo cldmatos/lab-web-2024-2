@@ -19,7 +19,15 @@ const routes = [
             handler: produtoController.consultarProdutos,
             validate: produtoSchema.consultarProdutos
         }
-    }
+    },
+    {
+        method: "GET",
+        path: `${baseVersion}/produtos{id}`,
+        options: {
+            handler: produtoController.consultaPorId,
+            validate: produtoSchema.consultaPorId
+        }
+    } 
 ];
 
 module.exports = routes;

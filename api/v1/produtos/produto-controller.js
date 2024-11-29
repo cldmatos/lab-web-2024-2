@@ -18,5 +18,16 @@ const consultarProdutos = async (request, h) => {
     return result;
 }
 
+const consultaPorId = async (request, h) => {
 
-module.exports = {criarProduto, consultarProdutos};
+    const idProduto = request.params.id;
+    
+    const produtoProcurado = listaProdutos.find(produto => produto.id == idProduto);
+    if(produtoProcurado) {
+        return h.response(ProdutoProcurado).code(200);
+    } 
+
+    return h.response().code(404);
+}
+
+module.exports = {criarProduto, consultarProdutos, consultaPorId};

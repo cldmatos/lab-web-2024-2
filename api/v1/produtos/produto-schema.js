@@ -36,6 +36,17 @@ const consultarProdutos = {
     })
 }
 
+const consultaPorId = {
+    params: Joi.object({
+        id: Joi
+            .number()
+            .integer()
+            .positive()
+            .required()
+    })
+}
+
 module.exports = {criarProduto,
-                  consultarProdutos    
+                  consultarProdutos,
+                  consultaPorId    
                  };
