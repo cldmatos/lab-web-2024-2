@@ -43,9 +43,10 @@ A base do projeto foi construída na disciplina de **Laboratório Web** e serve 
 
 ## Criando o Banco de dados e as tabelas
   --Criando banco de dados
-  CREATE DATABASE seu_banco_de_dados; (criando o banco de dados)
 
-  -- Tabela Produto
+  CREATE DATABASE seu_banco_de_dados;
+
+  -- Criando a Tabela Produto
   CREATE TABLE produto (
       cod_produto SERIAL PRIMARY KEY,
       nome VARCHAR(100) NOT NULL,
@@ -53,7 +54,7 @@ A base do projeto foi construída na disciplina de **Laboratório Web** e serve 
       preco NUMERIC(10, 2)
   );
 
--- Tabela Aluno
+-- Criando a Tabela Aluno
   CREATE TABLE aluno (
       cod_aluno SERIAL PRIMARY KEY,
       nome VARCHAR(100) NOT NULL,
@@ -61,8 +62,11 @@ A base do projeto foi construída na disciplina de **Laboratório Web** e serve 
   );
 
 ## Configurando conexão com o banco de dados
+
   Configure o arquvio `.env` com os parâmetros de conexão com seu banco.
+
   Exemplo de configuração:
+
   PORT=0000 (porta local no navegador, utilizamos 5005)
   HOST=0.0.0.0 (ip p/ teste (utilizamos localhost ou 0.0.0.0))
 
