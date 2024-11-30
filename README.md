@@ -47,6 +47,7 @@ A base do projeto foi construída na disciplina de **Laboratório Web** e serve 
   CREATE DATABASE seu_banco_de_dados;
 
   -- Criando a Tabela Produto
+  
   CREATE TABLE produto (
       cod_produto SERIAL PRIMARY KEY,
       nome VARCHAR(100) NOT NULL,
@@ -55,6 +56,7 @@ A base do projeto foi construída na disciplina de **Laboratório Web** e serve 
   );
 
 -- Criando a Tabela Aluno
+
   CREATE TABLE aluno (
       cod_aluno SERIAL PRIMARY KEY,
       nome VARCHAR(100) NOT NULL,
