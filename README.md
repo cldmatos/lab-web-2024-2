@@ -30,43 +30,58 @@ A base do projeto foi construída na disciplina de **Laboratório Web** e serve 
    ```
 
 ## Instalando o PostgreSQL
+  
   Linux:
+    
     sudo apt update
-    sudo apt install postgresql postgresql-contrib
-    sudo systemctl status postgresql
-  Mac: 
+    
+    sudo apt install postgresql postgresql-contrib    
+    
+    sudo systemctl status postgresql   
+  
+  Mac:
+     
     brew install postgresql
-    brew services start postgresql
+    
+    brew services start postgresql    
+
   Windows:
-    Baixe o instalador em `https://www.postgresql.org/download/windows/`
-    psql --version
+
+  Baixe o instalador em `https://www.postgresql.org/download/windows/`
+    
+    psql --version    
 
 ## Criando o Banco de dados e as tabelas
   --Criando banco de dados
+  ```bash
+  CREATE DATABASE seu_banco_de_dados; (criando o banco de dados)
+  ```
 
-  CREATE DATABASE seu_banco_de_dados;
-
-  -- Criando a Tabela Produto
+  -- Tabela Produto
+  ```bash
   CREATE TABLE produto (
       cod_produto SERIAL PRIMARY KEY,
       nome VARCHAR(100) NOT NULL,
       quantidade INTEGER,
       preco NUMERIC(10, 2)
   );
+  ```
 
--- Criando a Tabela Aluno
+  -- Tabela Aluno
+  ```bash  
   CREATE TABLE aluno (
       cod_aluno SERIAL PRIMARY KEY,
       nome VARCHAR(100) NOT NULL,
       idade INTEGER
   );
+  ```
 
 ## Configurando conexão com o banco de dados
-
+  
   Configure o arquvio `.env` com os parâmetros de conexão com seu banco.
 
   Exemplo de configuração:
-
+  ```bash
   PORT=0000 (porta local no navegador, utilizamos 5005)
   HOST=0.0.0.0 (ip p/ teste (utilizamos localhost ou 0.0.0.0))
 
@@ -75,6 +90,7 @@ A base do projeto foi construída na disciplina de **Laboratório Web** e serve 
   DB_NAME=nome_do_banco
   DB_USER=seu_usuario
   DB_PASSWORD=sua_senha
+  ```
 
 ## Scripts de Inicialização
 
