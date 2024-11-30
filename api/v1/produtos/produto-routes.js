@@ -41,7 +41,7 @@ const routes = [
         path: `${baseVersion}/produtos/{id}`,
         options: {
             handler: produtoController.deletarProduto,
-            validate: produtoSchema.buscarProdutoPorId 
+            validate: produtoSchema.deletarProduto
         }
     }
 ];
