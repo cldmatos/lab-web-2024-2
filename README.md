@@ -78,7 +78,7 @@ A base do projeto foi construída na disciplina de **Laboratório Web** e serve 
 
 ## Configurando conexão com o banco de dados
   
-  Configure o arquvio `.env` com os parâmetros de conexão com seu banco.
+  Configure o arquivo `.env` com os parâmetros de conexão com seu banco.
 
   Exemplo de configuração:
   ```bash
